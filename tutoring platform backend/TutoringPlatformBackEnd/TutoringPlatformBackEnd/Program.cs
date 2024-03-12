@@ -5,8 +5,11 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllers();
 
-// Add your user authentication service
+// Add the user authentication service
 builder.Services.AddScoped<IUserService, UserService>();
+
+//Add the study material service
+builder.Services.AddScoped<IStudyMaterialService, StudyMaterialService>();
 
 var app = builder.Build();
 

@@ -1,12 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "t837FYo5mfu7nAFnavQFpcqyjK3dkLGTKBrlmEgAFJTJ/jsOZ2XtojN8uw5kC0WH3f7VcVuQafN4d3qB7IVftg==",
+  "dgSpecHash": "dzHjnzrLF8eWYPtZnqkW9WNMDKU9V+EcQxv7NzfGfk/V9CnIv5kcf4tGls5QYNzqs1mtRzalvgOu7PIZiRk97A==",
   "success": true,
   "projectFilePath": "C:\\Tutoring project\\tutoring platform backend\\TutoringPlatformBackEnd\\TutoringPlatformBackEnd\\TutoringPlatformBackEnd.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\toder\\.nuget\\packages\\bcrypt.net-core\\1.6.0\\bcrypt.net-core.1.6.0.nupkg.sha512",
+    "C:\\Users\\toder\\.nuget\\packages\\castle.core\\5.1.1\\castle.core.5.1.1.nupkg.sha512",
     "C:\\Users\\toder\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.18.1\\microsoft.visualstudio.azure.containers.tools.targets.1.18.1.nupkg.sha512",
-    "C:\\Users\\toder\\.nuget\\packages\\portable.bouncycastle\\1.9.0\\portable.bouncycastle.1.9.0.nupkg.sha512"
+    "C:\\Users\\toder\\.nuget\\packages\\moq\\4.20.70\\moq.4.20.70.nupkg.sha512",
+    "C:\\Users\\toder\\.nuget\\packages\\nunit\\4.0.0\\nunit.4.0.0.nupkg.sha512",
+    "C:\\Users\\toder\\.nuget\\packages\\portable.bouncycastle\\1.9.0\\portable.bouncycastle.1.9.0.nupkg.sha512",
+    "C:\\Users\\toder\\.nuget\\packages\\system.diagnostics.eventlog\\6.0.0\\system.diagnostics.eventlog.6.0.0.nupkg.sha512"
   ],
   "logs": []
 }

@@ -29,3 +29,37 @@ C:\tutoring platform backend\TutoringPlatformBackEnd\TutoringPlatformBackEnd\obj
 C:\tutoring platform backend\TutoringPlatformBackEnd\TutoringPlatformBackEnd\obj\Debug\net6.0\TutoringPlatformBackEnd.pdb
 C:\tutoring platform backend\TutoringPlatformBackEnd\TutoringPlatformBackEnd\obj\Debug\net6.0\TutoringPlatformBackEnd.genruntimeconfig.cache
 C:\tutoring platform backend\TutoringPlatformBackEnd\TutoringPlatformBackEnd\obj\Debug\net6.0\ref\TutoringPlatformBackEnd.dll
+C:\Tutoring project\tutoring platform backend\TutoringPlatformBackEnd\TutoringPlatformBackEnd\obj\Debug\net6.0\TutoringPlatformBackEnd.csproj.AssemblyReference.cache
+C:\Tutoring project\tutoring platform backend\TutoringPlatformBackEnd\TutoringPlatformBackEnd\obj\Debug\net6.0\TutoringPlatformBackEnd.GeneratedMSBuildEditorConfig.editorconfig
+C:\Tutoring project\tutoring platform backend\TutoringPlatformBackEnd\TutoringPlatformBackEnd\obj\Debug\net6.0\TutoringPlatformBackEnd.AssemblyInfoInputs.cache
+C:\Tutoring project\tutoring platform backend\TutoringPlatformBackEnd\TutoringPlatformBackEnd\obj\Debug\net6.0\TutoringPlatformBackEnd.AssemblyInfo.cs
+C:\Tutoring project\tutoring platform backend\TutoringPlatformBackEnd\TutoringPlatformBackEnd\obj\Debug\net6.0\TutoringPlatformBackEnd.csproj.CoreCompileInputs.cache
+C:\Tutoring project\tutoring platform backend\TutoringPlatformBackEnd\TutoringPlatformBackEnd\obj\Debug\net6.0\TutoringPlatformBackEnd.MvcApplicationPartsAssemblyInfo.cache
+C:\Tutoring project\tutoring platform backend\TutoringPlatformBackEnd\TutoringPlatformBackEnd\obj\Debug\net6.0\TutoringPlatformBackEnd.dll
+C:\Tutoring project\tutoring platform backend\TutoringPlatformBackEnd\TutoringPlatformBackEnd\obj\Debug\net6.0\refint\TutoringPlatformBackEnd.dll
+C:\Tutoring project\tutoring platform backend\TutoringPlatformBackEnd\TutoringPlatformBackEnd\obj\Debug\net6.0\TutoringPlatformBackEnd.pdb
+C:\Tutoring project\tutoring platform backend\TutoringPlatformBackEnd\TutoringPlatformBackEnd\bin\Debug\net6.0\appsettings.Development.json
+C:\Tutoring project\tutoring platform backend\TutoringPlatformBackEnd\TutoringPlatformBackEnd\bin\Debug\net6.0\appsettings.json
+C:\Tutoring project\tutoring platform backend\TutoringPlatformBackEnd\TutoringPlatformBackEnd\bin\Debug\net6.0\TutoringPlatformBackEnd.staticwebassets.runtime.json
+C:\Tutoring project\tutoring platform backend\TutoringPlatformBackEnd\TutoringPlatformBackEnd\bin\Debug\net6.0\TutoringPlatformBackEnd.exe
+C:\Tutoring project\tutoring platform backend\TutoringPlatformBackEnd\TutoringPlatformBackEnd\bin\Debug\net6.0\TutoringPlatformBackEnd.deps.json
+C:\Tutoring project\tutoring platform backend\TutoringPlatformBackEnd\TutoringPlatformBackEnd\bin\Debug\net6.0\TutoringPlatformBackEnd.runtimeconfig.json
+C:\Tutoring project\tutoring platform backend\TutoringPlatformBackEnd\TutoringPlatformBackEnd\bin\Debug\net6.0\TutoringPlatformBackEnd.dll
+C:\Tutoring project\tutoring platform backend\TutoringPlatformBackEnd\TutoringPlatformBackEnd\bin\Debug\net6.0\TutoringPlatformBackEnd.pdb
+C:\Tutoring project\tutoring platform backend\TutoringPlatformBackEnd\TutoringPlatformBackEnd\bin\Debug\net6.0\BCrypt.Net-Core.dll
+C:\Tutoring project\tutoring platform backend\TutoringPlatformBackEnd\TutoringPlatformBackEnd\bin\Debug\net6.0\Castle.Core.dll
+C:\Tutoring project\tutoring platform backend\TutoringPlatformBackEnd\TutoringPlatformBackEnd\bin\Debug\net6.0\Moq.dll
+C:\Tutoring project\tutoring platform backend\TutoringPlatformBackEnd\TutoringPlatformBackEnd\bin\Debug\net6.0\nunit.framework.dll
+C:\Tutoring project\tutoring platform backend\TutoringPlatformBackEnd\TutoringPlatformBackEnd\bin\Debug\net6.0\nunit.framework.legacy.dll
+C:\Tutoring project\tutoring platform backend\TutoringPlatformBackEnd\TutoringPlatformBackEnd\bin\Debug\net6.0\BouncyCastle.Crypto.dll
+C:\Tutoring project\tutoring platform backend\TutoringPlatformBackEnd\TutoringPlatformBackEnd\obj\Debug\net6.0\staticwebassets\msbuild.TutoringPlatformBackEnd.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Tutoring project\tutoring platform backend\TutoringPlatformBackEnd\TutoringPlatformBackEnd\obj\Debug\net6.0\staticwebassets\msbuild.build.TutoringPlatformBackEnd.props
+C:\Tutoring project\tutoring platform backend\TutoringPlatformBackEnd\TutoringPlatformBackEnd\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.TutoringPlatformBackEnd.props
+C:\Tutoring project\tutoring platform backend\TutoringPlatformBackEnd\TutoringPlatformBackEnd\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.TutoringPlatformBackEnd.props
+C:\Tutoring project\tutoring platform backend\TutoringPlatformBackEnd\TutoringPlatformBackEnd\obj\Debug\net6.0\staticwebassets.pack.json
+C:\Tutoring project\tutoring platform backend\TutoringPlatformBackEnd\TutoringPlatformBackEnd\obj\Debug\net6.0\staticwebassets.build.json
+C:\Tutoring project\tutoring platform backend\TutoringPlatformBackEnd\TutoringPlatformBackEnd\obj\Debug\net6.0\staticwebassets.development.json
+C:\Tutoring project\tutoring platform backend\TutoringPlatformBackEnd\TutoringPlatformBackEnd\obj\Debug\net6.0\scopedcss\bundle\TutoringPlatformBackEnd.styles.css
+C:\Tutoring project\tutoring platform backend\TutoringPlatformBackEnd\TutoringPlatformBackEnd\obj\Debug\net6.0\TutoringPlatformBackEnd.csproj.CopyComplete
+C:\Tutoring project\tutoring platform backend\TutoringPlatformBackEnd\TutoringPlatformBackEnd\obj\Debug\net6.0\TutoringPlatformBackEnd.genruntimeconfig.cache
+C:\Tutoring project\tutoring platform backend\TutoringPlatformBackEnd\TutoringPlatformBackEnd\obj\Debug\net6.0\ref\TutoringPlatformBackEnd.dll

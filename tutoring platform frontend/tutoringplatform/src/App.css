@@ -329,7 +329,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 /*}*/
 
 
-/************ Form Create Event ************/
+/************ Form Upload Study Material ************/
 
 .create_form{
   margin: 0;
@@ -348,7 +348,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   background-repeat: no-repeat;
 }
 
-.wrapper_createEvent{
+.wrapper_createStudyMaterial{
   height: 400px;
   width: 650px;
   size: auto;

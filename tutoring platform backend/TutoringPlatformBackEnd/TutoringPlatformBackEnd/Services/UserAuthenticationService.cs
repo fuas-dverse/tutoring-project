@@ -22,8 +22,8 @@ namespace TutoringPlatformBackEnd.Services
                 services.AddControllers();
 
                 // Add Entity Framework Core with SQL Server
-                services.AddDbContext<UserDbContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+               // services.AddDbContext<UserDbContext>(options =>
+                //    options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
                 // Add services for authentication
                 services.AddScoped<IUserService, UserService>();
