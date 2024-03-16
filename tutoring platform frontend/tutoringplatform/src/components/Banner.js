@@ -59,7 +59,7 @@ export const Banner = () => {
                                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
                                         standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to
                                         make a type specimen book.</p>
-                                    <button data-cy="login" onClick={() => window.location.href="/login"}>Let’s Start! <ArrowRightCircle size={25} /></button>
+                                    <button data-cy="login" onClick={() => window.location.href="/signup"}>Let’s Start! <ArrowRightCircle size={25} /></button>
                                 </div>}
                         </TrackVisibility>
                     </Col>

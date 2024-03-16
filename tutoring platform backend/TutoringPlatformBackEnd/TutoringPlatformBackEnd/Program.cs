@@ -1,4 +1,7 @@
+using System.Configuration;
+using TutoringPlatformBackEnd;
 using TutoringPlatformBackEnd.Services;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -6,10 +9,11 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 
 // Add the user authentication service
-builder.Services.AddScoped<IUserService, UserService>();
+//builder.Services.AddScoped<IUserService, UserService>();
 
-//Add the study material service
-builder.Services.AddScoped<IStudyMaterialService, StudyMaterialService>();
+//Add database context
+builder.Services.AddDbContext<ApplicationDbContext>(options => 
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 var app = builder.Build();
 

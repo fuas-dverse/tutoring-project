@@ -1,0 +1,111 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Noto Sans", sans-serif;
+    color: slategray;
+}
+
+.wrapperCardsBox {
+    width: 100%;
+
+    /*
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 10px;
+    row-gap: 1em;
+    */
+}
+
+.card-box {
+    display: flex;
+    width: 1440px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    min-height: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+}
+.card2 {
+    background-color: white;
+    margin-top: 20px;
+    width: 28%;
+}
+.card__img {
+    width: 14rem;
+    height: 11rem;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+.card__body {
+    margin: 1rem;
+    flex-grow: 1;
+}
+.card__title {
+    line-height: 1.4rem;
+    margin-bottom: 0.5rem;
+    color: black;
+}
+
+.card__description {
+    line-height: 1.2rem;
+    color: black;
+}
+.card__price {
+    font-size: 1.4rem;
+    margin-top: 0.6rem;
+    color:black;
+}
+
+.card__price::before {
+    content: "$";
+    font-size: 1rem;
+    position: relative;
+    top: -0.3rem;
+    padding-right: 0.1rem;
+}
+
+
+.card__btn {
+    border: none;
+    border-top: 1px solid gray;
+    background-color: transparent;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: bold;
+    color: royalblue;
+    width: 100%;
+    padding-top: 1rem;
+    margin-top: 1rem;
+    cursor: pointer;
+}
+.card__btn:hover {
+    color: darkslategrey;
+}
+
+
+
+@media screen and (min-width: 600px) {
+    .wrapper {
+        grid-template-columns: repeat(auto-fit, minmax(14rem, 16rem));
+    }
+
+    .card {
+        flex-direction: column;
+        text-align: center;
+        min-width: 14rem;
+    }
+
+    .card__img {
+        width: 100%;
+        height: 12rem;
+    }
+}
+

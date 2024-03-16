@@ -1,57 +1,55 @@
-﻿using TutoringPlatformBackEnd.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using System.Data.Entity;
+using TutoringPlatformBackEnd.Models;
+using EntityState = Microsoft.EntityFrameworkCore.EntityState;
 
 namespace TutoringPlatformBackEnd.Services
 {
     public class UserService : IUserService
     {
-        // For demonstration purposes, we'll use a simple in-memory list to store user data.
-        private readonly List<User> _users = new List<User>();
+        private readonly ApplicationDbContext _context;
 
-        public UserService()
+        public UserService(ApplicationDbContext context)
         {
-            // Add some dummy users for demonstration
-            _users.Add(new User { Email = "test1@example.com", Password = "password1", AccountType = "student" });
-            _users.Add(new User { Email = "test2@example.com", Password = "password2", AccountType = "tutor" });
+            _context = context;
         }
 
-        public UserLoginResponse Login(string email, string password)
+        public async Task<User> GetUserByEmailAsync(string email)
         {
-            // Find user by email
-            var user = _users.Find(u => u.Email == email);
-
-            if (user == null || user.Password != password)
-            {
-                return new UserLoginResponse { Success = false, Message = "Invalid email or password" };
-            }
-
-            // User authenticated successfully
-            return new UserLoginResponse { Success = true, Message = "Login successful", User = user };
+            return await _context.Users.FirstOrDefaultAsync(u => u.Email == email);
         }
 
-        public UserSignupResponse Signup(string email, string password, string accountType, string name, string lastName, string educationLevel, int age, string specialization)
+        public async Task CreateUserAsync(User user)
         {
-            // Check if email is already registered
-            if (_users.Exists(u => u.Email == email))
+            // Check if the user with the same email already exists
+            if (await GetUserByEmailAsync(user.Email) != null)
             {
-                return new UserSignupResponse { Success = false, Message = "Email already registered" };
+                throw new InvalidOperationException("User with the same email already exists.");
             }
 
-            // Create new user
-            var newUser = new User
+            _context.Users.Add(user);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task UpdateUserAsync(User user)
+        {
+            _context.Entry(user).State = EntityState.Modified;
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task DeleteUserAsync(string email)
+        {
+            var user = await GetUserByEmailAsync(email);
+            if (user != null)
             {
-                Email = email,
-                Password = password,
-                AccountType = accountType,
-                Name = name,
-                LastName = lastName,
-                EducationLevel = educationLevel,
-                Age = age,
-                Specialization = specialization
-            };
+                _context.Users.Remove(user);
+                await _context.SaveChangesAsync();
+            }
+        }
 
-            _users.Add(newUser);
-
-            return new UserSignupResponse { Success = true, Message = "Signup successful", User = newUser };
+        public async Task<IEnumerable<User>> GetAllUsersAsync()
+        {
+            return await _context.Users.ToListAsync();
         }
     }
 }

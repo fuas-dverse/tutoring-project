@@ -4,35 +4,76 @@ using TutoringPlatformBackEnd.Services;
 
 namespace TutoringPlatformBackEnd.Controllers
 {
-        [ApiController]
-        [Route("[controller]")]
-        public class AuthController : ControllerBase
+    [ApiController]
+    [Route("auth")]
+    public class AuthController : ControllerBase
+    {
+        private readonly IUserService _userService;
+
+        public AuthController(IUserService userService)
         {
-            private readonly IUserService _userService;
+            _userService = userService;
+        }
 
-            public AuthController(IUserService userService)
+        [HttpPost("register")]
+        public async Task<IActionResult> Register(SignupRequest request)
+        {
+            try
             {
-                _userService = userService;
+                var user = new User
+                {
+                    Email = request.Email,
+                    Password = request.Password,
+                    AccountType = request.AccountType,
+                    Name = request.Name,
+                    LastName = request.LastName,
+                    EducationLevel = request.EducationLevel,
+                    Age = request.Age,
+                    Specialization = request.Specialization
+                };
+
+                user.SetPassword(user.Password);
+                await _userService.CreateUserAsync(user);
+
+                var response = new UserSignupResponse
+                {
+                    Success = true,
+                    Message = "User registered successfully",
+                    User = user
+                };
+
+                return Ok(response);
             }
-
-            [HttpPost("login")]
-            public IActionResult Login(LoginRequest request)
+            catch (Exception ex)
             {
-                var result = _userService.Login(request.Email, request.Password);
-                if (result == null)
-                    return Unauthorized("Invalid email or password");
-
-                return Ok(result);
-            }
-
-            [HttpPost("signup")]
-            public IActionResult Signup(SignupRequest request)
-            {
-                var result = _userService.Signup(request.Email, request.Password, request.AccountType, request.Name, request.LastName, request.EducationLevel, request.Age, request.Specialization);
-                if (!result.Success)
-                    return Conflict(result.Message);
-
-                return Ok(result.Success);
+                return BadRequest($"Failed to register user: {ex.Message}");
             }
         }
+
+        [HttpPost("login")]
+        public async Task<IActionResult> Login(LoginRequest request)
+        {
+            var user = await _userService.GetUserByEmailAsync(request.Email);
+            if (user == null || !user.VerifyPassword(request.Password))
+            {
+                return BadRequest("Invalid email or password");
+            }
+
+            var response = new UserLoginResponse
+            {
+                Success = true,
+                Message = "Login successful",
+                User = user
+            };
+
+            return Ok(response);
+        }
+
+        [HttpGet("users")]
+        public async Task<IActionResult> GetAllUsers()
+        {
+            var users = await _userService.GetAllUsersAsync();
+            return Ok(users);
+        }
+    }
 }

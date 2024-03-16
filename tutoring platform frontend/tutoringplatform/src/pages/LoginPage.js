@@ -38,11 +38,11 @@ function LoginPage() {
                 console.log("Roles: " + roles);
                 console.log("Id " + userId);
 
-                if (response.role ==="client"){
-                    navigate("/events");
-                } else if(response.role === "organizer")
+                if (response.role ==="student"){
+                    navigate("/studyMaterials");
+                } else if(response.role === "tutor")
                 {
-                    navigate(`/myEvents/${userId}`);
+                    navigate(`/myUploads/${userId}`);
                 }
 
 

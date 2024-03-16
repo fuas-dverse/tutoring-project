@@ -2,7 +2,7 @@ import api from './http-common';
 import jwtDecode from "jwt-decode";
 
 const login = (user) => {
-    return api.post(`/login`, user)
+    return api.post(`/auth/login`, user)
         .then((response) => {
             if(response.data.accessToken){
                 localStorage.setItem("user", JSON.stringify(response.data));
@@ -16,7 +16,7 @@ const logout = () => {
 }
 
 const register = (data) =>{
-    return api.post(`/register`, data);
+    return api.post(`/auth/register`, data);
 }
 
 const getCurrentUser = () => {
