@@ -1,32 +1,62 @@
-﻿using TutoringPlatformBackEnd.Users.Models;
+﻿using MongoDB.Driver;
+using TutoringPlatformBackEnd.Users.Models;
 
 namespace TutoringPlatformBackEnd.Users.Services
 {
-    public class AuthService
+    public class AuthService : IAuthService
     {
-        // Dummy database
-        private static readonly List<User> users = new List<User>();
+        private readonly IMongoCollection<User> _usersCollection;
 
-        public bool Register(User user)
+        public AuthService(IMongoClient mongoClient)
         {
-            if (UserExists(user.Email))
+            var database = mongoClient.GetDatabase("Users");
+            _usersCollection = database.GetCollection<User>("TutoringPlatform");
+        }
+
+        public async Task<User> RegisterAsync(SignupRequest request)
+        {
+            var user = new User
             {
-                return false; // User already exists
-            }
-
-            users.Add(user);
-            return true; // Successfully registered
+                Email = request.Email,
+                Password = HashPassword(request.Password),
+                // Additional properties based on request or defaults
+            };
+            await CreateUserAsync(user);
+            return user;
         }
 
-        public bool Login(string email, string password)
+        public async Task<User> LoginAsync(LoginRequest request)
         {
-            var user = users.FirstOrDefault(u => u.Email == email && u.Password == password);
-            return user != null; // If user is found with matching credentials
+            return await GetUserByEmailAsync(request.Email);
         }
 
-        private bool UserExists(string email)
+        public async Task<User> GetUserByEmailAsync(string email)
         {
-            return users.Any(u => u.Email == email);
+            var filter = Builders<User>.Filter.Eq(u => u.Email, email);
+            return await _usersCollection.Find(filter).FirstOrDefaultAsync();
+        }
+
+        public async Task CreateUserAsync(User user)
+        {
+            await _usersCollection.InsertOneAsync(user);
+        }
+
+        public async Task UpdateUserAsync(User user)
+        {
+            var filter = Builders<User>.Filter.Eq(u => u.Email, user.Email);
+            await _usersCollection.ReplaceOneAsync(filter, user);
+        }
+
+        public async Task DeleteUserAsync(string email)
+        {
+            var filter = Builders<User>.Filter.Eq(u => u.Email, email);
+            await _usersCollection.DeleteOneAsync(filter);
+        }
+
+        // Method to hash the password using BCrypt
+        private string HashPassword(string password)
+        {
+            return BCrypt.Net.BCrypt.HashPassword(password);
         }
     }
 }

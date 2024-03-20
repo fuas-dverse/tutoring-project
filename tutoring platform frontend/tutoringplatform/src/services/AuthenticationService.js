@@ -26,7 +26,8 @@ const getCurrentUser = () => {
 const getId = () => {
     const token = localStorage.getItem("user");
     if(token) {
-        var user = jwtDecode(token);
+        var user;
+        user = jwtDecode(token);
         console.log(user);
     }else {
         user = {

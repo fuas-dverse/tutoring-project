@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using TutoringPlatformBackEnd.Users.Services;
 using TutoringPlatformBackEnd.Users.Models;
+using TutoringPlatformBackEnd.Users.Services;
 
 namespace TutoringPlatformBackEnd.Users.Controllers
 {
@@ -8,39 +8,75 @@ namespace TutoringPlatformBackEnd.Users.Controllers
     [Route("auth")]
     public class AuthController : ControllerBase
     {
-        private readonly AuthService _authService;
+        private readonly IAuthService _userService;
 
-        public AuthController(AuthService authService)
+        public AuthController(IAuthService userService)
         {
-            _authService = authService;
+            _userService = userService;
         }
 
         [HttpPost("register")]
-        public IActionResult Register(User user)
+        public async Task<IActionResult> Register(SignupRequest request)
         {
-            if (_authService.Register(user))
+            try
             {
-                return Ok("User registered successfully!");
-            }
+                var existingUser = await _userService.GetUserByEmailAsync(request.Email);
+                if (existingUser != null)
+                {
+                    return Conflict("User already exists");
+                }
 
-            return Conflict("User already exists!");
+                var user = new User
+                {
+                    Email = request.Email,
+                    Password = HashPassword(request.Password),
+                    // Additional properties based on request or defaults
+                };
+
+                await _userService.RegisterAsync(request);
+
+                return Ok(new { message = "User registered successfully" });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"Failed to register user: {ex.Message}");
+            }
         }
 
         [HttpPost("login")]
-        public IActionResult Login(LoginRequest loginRequest)
+        public async Task<IActionResult> Login(LoginRequest request)
         {
-            if (_authService.Login(loginRequest.Email, loginRequest.Password))
+            try
             {
-                return Ok("Login successful!");
+                var user = await _userService.GetUserByEmailAsync(request.Email);
+                if (user == null)
+                {
+                    return NotFound("User not found");
+                }
+
+                if (!VerifyPassword(request.Password, user.Password))
+                {
+                    return Unauthorized("Invalid email or password");
+                }
+
+                return Ok(new { message = "Login successful", user });
             }
-
-            return Unauthorized("Invalid email or password!");
+            catch (Exception ex)
+            {
+                return BadRequest($"Failed to login: {ex.Message}");
+            }
         }
-    }
 
-    public class LoginRequest
-    {
-        public string Email { get; set; }
-        public string Password { get; set; }
+        // Method to hash the password using BCrypt
+        private string HashPassword(string password)
+        {
+            return BCrypt.Net.BCrypt.HashPassword(password);
+        }
+
+        // Method to verify password using BCrypt
+        private bool VerifyPassword(string password, string hashedPassword)
+        {
+            return BCrypt.Net.BCrypt.Verify(password, hashedPassword);
+        }
     }
 }
