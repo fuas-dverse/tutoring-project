@@ -16,44 +16,51 @@ namespace TutoringPlatformBackEnd.StudyMaterials.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<List<StudyMaterial>>> GetAllStudyMaterialsAsync()
+        public async Task<ActionResult<List<StudyMaterial>>> GetAllStudyMaterials()
         {
             var studyMaterials = await _studyMaterialService.GetAllStudyMaterialsAsync();
             return Ok(studyMaterials);
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<StudyMaterial>> GetStudyMaterialByIdAsync(int id)
+        public async Task<ActionResult<StudyMaterial>> GetStudyMaterialById(string id)
         {
             var studyMaterial = await _studyMaterialService.GetStudyMaterialByIdAsync(id);
             if (studyMaterial == null)
             {
                 return NotFound();
             }
-            return studyMaterial;
+            return Ok(studyMaterial);
+        }
+
+        [HttpGet("tutor/{tutorId}")]
+        public async Task<ActionResult<List<StudyMaterial>>> GetStudyMaterialsByTutorId(string tutorId)
+        {
+            var studyMaterials = await _studyMaterialService.GetStudyMaterialsByTutorIdAsync(tutorId);
+            return Ok(studyMaterials);
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateStudyMaterialAsync(StudyMaterial studyMaterial)
+        public async Task<ActionResult<StudyMaterial>> CreateStudyMaterial([FromBody] StudyMaterial studyMaterial)
         {
-            await _studyMaterialService.CreateStudyMaterialAsync(studyMaterial);
-            return CreatedAtAction(nameof(GetStudyMaterialByIdAsync), new { id = studyMaterial.Id }, studyMaterial);
+            if (studyMaterial == null)
+            {
+                return BadRequest("Invalid request payload");
+            }
+
+            var createdStudyMaterial = await _studyMaterialService.CreateStudyMaterialAsync(studyMaterial);
+            return CreatedAtAction(nameof(GetStudyMaterialById), new { id = createdStudyMaterial.Id }, createdStudyMaterial);
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateStudyMaterialAsync(int id, StudyMaterial studyMaterial)
+        public async Task<IActionResult> UpdateStudyMaterial(string id, StudyMaterial studyMaterial)
         {
-            if (id != studyMaterial.Id)
-            {
-                return BadRequest();
-            }
-
-            await _studyMaterialService.UpdateStudyMaterialAsync(studyMaterial);
+            await _studyMaterialService.UpdateStudyMaterialAsync(id, studyMaterial);
             return NoContent();
         }
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteStudyMaterialAsync(int id)
+        public async Task<IActionResult> DeleteStudyMaterial(string id)
         {
             await _studyMaterialService.DeleteStudyMaterialAsync(id);
             return NoContent();

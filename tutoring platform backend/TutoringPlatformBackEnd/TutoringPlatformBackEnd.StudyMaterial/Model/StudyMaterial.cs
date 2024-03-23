@@ -1,20 +1,19 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using MongoDB.Bson.Serialization.Attributes;
+using MongoDB.Bson;
+using System.ComponentModel.DataAnnotations;
 
 namespace TutoringPlatformBackEnd.StudyMaterials.Model
 {
     public class StudyMaterial
     {
-        public int Id { get; set; }
+        [BsonId]
+        [BsonRepresentation(BsonType.ObjectId)]
+        public string Id { get; set; }
 
-        [Required]
+        public string TutorId { get; set; }
         public string Title { get; set; }
-
-        [Required]
         public string EducationLevel { get; set; }
-
-        public string[] Tags { get; set; }
-
-
-        public string Content { get; set; }
+        public List<string> Tags { get; set; }
+        public byte[] Content { get; set; } // Binary content (video/pdf/image)
     }
 }

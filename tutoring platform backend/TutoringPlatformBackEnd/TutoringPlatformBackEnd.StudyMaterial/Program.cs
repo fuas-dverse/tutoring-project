@@ -1,3 +1,4 @@
+using MongoDB.Driver;
 using TutoringPlatformBackEnd.StudyMaterials.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -6,11 +7,19 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 //Add the study material service
 builder.Services.AddScoped<IStudyMaterialService, StudyMaterialService>();
+
+// Configure MongoDB connection
+builder.Services.AddSingleton<IMongoClient>(sp =>
+{
+    var connectionString = "mongodb://localhost:27017"; 
+    return new MongoClient(connectionString);
+});
 
 var app = builder.Build();
 

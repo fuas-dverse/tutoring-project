@@ -40,3 +40,16 @@ C:\Tutoring project\tutoring platform backend\TutoringPlatformBackEnd\TutoringPl
 C:\Tutoring project\tutoring platform backend\TutoringPlatformBackEnd\TutoringPlatformBackEnd.StudyMaterial\obj\Debug\net6.0\TutoringPlatformBackEnd.StudyMaterials.pdb
 C:\Tutoring project\tutoring platform backend\TutoringPlatformBackEnd\TutoringPlatformBackEnd.StudyMaterial\obj\Debug\net6.0\TutoringPlatformBackEnd.StudyMaterials.genruntimeconfig.cache
 C:\Tutoring project\tutoring platform backend\TutoringPlatformBackEnd\TutoringPlatformBackEnd.StudyMaterial\obj\Debug\net6.0\ref\TutoringPlatformBackEnd.StudyMaterials.dll
+C:\Tutoring project\tutoring platform backend\TutoringPlatformBackEnd\TutoringPlatformBackEnd.StudyMaterial\bin\Debug\net6.0\AWSSDK.Core.dll
+C:\Tutoring project\tutoring platform backend\TutoringPlatformBackEnd\TutoringPlatformBackEnd.StudyMaterial\bin\Debug\net6.0\AWSSDK.SecurityToken.dll
+C:\Tutoring project\tutoring platform backend\TutoringPlatformBackEnd\TutoringPlatformBackEnd.StudyMaterial\bin\Debug\net6.0\DnsClient.dll
+C:\Tutoring project\tutoring platform backend\TutoringPlatformBackEnd\TutoringPlatformBackEnd.StudyMaterial\bin\Debug\net6.0\MongoDB.Bson.dll
+C:\Tutoring project\tutoring platform backend\TutoringPlatformBackEnd\TutoringPlatformBackEnd.StudyMaterial\bin\Debug\net6.0\MongoDB.Driver.dll
+C:\Tutoring project\tutoring platform backend\TutoringPlatformBackEnd\TutoringPlatformBackEnd.StudyMaterial\bin\Debug\net6.0\MongoDB.Driver.Core.dll
+C:\Tutoring project\tutoring platform backend\TutoringPlatformBackEnd\TutoringPlatformBackEnd.StudyMaterial\bin\Debug\net6.0\MongoDB.Libmongocrypt.dll
+C:\Tutoring project\tutoring platform backend\TutoringPlatformBackEnd\TutoringPlatformBackEnd.StudyMaterial\bin\Debug\net6.0\SharpCompress.dll
+C:\Tutoring project\tutoring platform backend\TutoringPlatformBackEnd\TutoringPlatformBackEnd.StudyMaterial\bin\Debug\net6.0\Snappier.dll
+C:\Tutoring project\tutoring platform backend\TutoringPlatformBackEnd\TutoringPlatformBackEnd.StudyMaterial\bin\Debug\net6.0\ZstdSharp.dll
+C:\Tutoring project\tutoring platform backend\TutoringPlatformBackEnd\TutoringPlatformBackEnd.StudyMaterial\bin\Debug\net6.0\runtimes\linux\native\libmongocrypt.so
+C:\Tutoring project\tutoring platform backend\TutoringPlatformBackEnd\TutoringPlatformBackEnd.StudyMaterial\bin\Debug\net6.0\runtimes\osx\native\libmongocrypt.dylib
+C:\Tutoring project\tutoring platform backend\TutoringPlatformBackEnd\TutoringPlatformBackEnd.StudyMaterial\bin\Debug\net6.0\runtimes\win\native\mongocrypt.dll

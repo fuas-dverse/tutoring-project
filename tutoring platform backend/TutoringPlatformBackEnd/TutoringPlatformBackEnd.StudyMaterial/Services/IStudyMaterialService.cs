@@ -5,9 +5,10 @@ namespace TutoringPlatformBackEnd.StudyMaterials.Services
     public interface IStudyMaterialService
     {
         Task<List<StudyMaterial>> GetAllStudyMaterialsAsync();
-        Task<StudyMaterial> GetStudyMaterialByIdAsync(int id);
-        Task CreateStudyMaterialAsync(StudyMaterial studyMaterial);
-        Task UpdateStudyMaterialAsync(StudyMaterial studyMaterial);
-        Task DeleteStudyMaterialAsync(int id);
+        Task<StudyMaterial> GetStudyMaterialByIdAsync(string id);
+        Task<List<StudyMaterial>> GetStudyMaterialsByTutorIdAsync(string tutorId);
+        Task<StudyMaterial> CreateStudyMaterialAsync(StudyMaterial studyMaterial);
+        Task UpdateStudyMaterialAsync(string id, StudyMaterial studyMaterial);
+        Task DeleteStudyMaterialAsync(string id);
     }
 }

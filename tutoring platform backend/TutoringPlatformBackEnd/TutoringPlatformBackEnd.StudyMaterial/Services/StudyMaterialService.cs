@@ -1,5 +1,7 @@
 ﻿
 using Microsoft.EntityFrameworkCore;
+using MongoDB.Bson;
+using MongoDB.Driver;
 using TutoringPlatformBackEnd.StudyMaterials.Model;
 using TutoringPlatformBackEnd.StudyMaterials.Services;
 
@@ -7,43 +9,45 @@ namespace TutoringPlatformBackEnd.StudyMaterials.Services
 {
     public class StudyMaterialService : IStudyMaterialService
     {
-        private readonly ApplicationDbContext _context;
+        private readonly IMongoCollection<StudyMaterial> _studyMaterialCollection;
 
-        public StudyMaterialService(ApplicationDbContext context)
+        public StudyMaterialService(IMongoClient mongoClient)
         {
-            _context = context;
+            var database = mongoClient.GetDatabase("StudyMaterials");
+            _studyMaterialCollection = database.GetCollection<StudyMaterial>("TutoringPlatform");
         }
 
         public async Task<List<StudyMaterial>> GetAllStudyMaterialsAsync()
         {
-            return await _context.StudyMaterials.ToListAsync();
+            return await _studyMaterialCollection.Find(_ => true).ToListAsync();
         }
 
-        public async Task<StudyMaterial> GetStudyMaterialByIdAsync(int id)
+        public async Task<StudyMaterial> GetStudyMaterialByIdAsync(string id)
         {
-            return await _context.StudyMaterials.FindAsync(id);
+            return await _studyMaterialCollection.Find(s => s.Id.Equals(id)).FirstOrDefaultAsync();
         }
 
-        public async Task CreateStudyMaterialAsync(StudyMaterial studyMaterial)
+        public async Task<List<StudyMaterial>> GetStudyMaterialsByTutorIdAsync(string tutorId)
         {
-            _context.StudyMaterials.Add(studyMaterial);
-            await _context.SaveChangesAsync();
+            return await _studyMaterialCollection.Find(s => s.TutorId == tutorId).ToListAsync();
         }
 
-        public async Task UpdateStudyMaterialAsync(StudyMaterial studyMaterial)
+        public async Task<StudyMaterial> CreateStudyMaterialAsync(StudyMaterial studyMaterial)
         {
-            _context.Entry(studyMaterial).State = EntityState.Modified;
-            await _context.SaveChangesAsync();
+            await _studyMaterialCollection.InsertOneAsync(studyMaterial);
+            return studyMaterial;
         }
 
-        public async Task DeleteStudyMaterialAsync(int id)
+        public async Task UpdateStudyMaterialAsync(string id, StudyMaterial studyMaterial)
         {
-            var studyMaterial = await _context.StudyMaterials.FindAsync(id);
-            if (studyMaterial != null)
-            {
-                _context.StudyMaterials.Remove(studyMaterial);
-                await _context.SaveChangesAsync();
-            }
+            var objectId = ObjectId.Parse(id);
+            await _studyMaterialCollection.ReplaceOneAsync(s => s.Id.ToString() == id, studyMaterial);
+        }
+
+        public async Task DeleteStudyMaterialAsync(string id)
+        {
+            var objectId = ObjectId.Parse(id);
+            await _studyMaterialCollection.DeleteOneAsync(s => s.Id.Equals(objectId));
         }
     }
 }

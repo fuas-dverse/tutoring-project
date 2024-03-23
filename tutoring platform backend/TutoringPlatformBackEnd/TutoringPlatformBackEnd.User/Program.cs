@@ -21,7 +21,7 @@ builder.Services.AddSwaggerGen();
 // Configure MongoDB connection
 builder.Services.AddSingleton<IMongoClient>(sp =>
 {
-    var connectionString = "mongodb://localhost:27017"; // Update connection string as needed
+    var connectionString = "mongodb://localhost:27017";
     return new MongoClient(connectionString);
 });
 
