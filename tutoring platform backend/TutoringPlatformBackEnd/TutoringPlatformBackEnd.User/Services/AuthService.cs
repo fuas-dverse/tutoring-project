@@ -21,7 +21,7 @@ namespace TutoringPlatformBackEnd.Users.Services
                 Password = HashPassword(request.Password),
                 // Additional properties based on request or defaults
             };
-            await CreateUserAsync(user);
+            await _usersCollection.InsertOneAsync(user);
             return user;
         }
 

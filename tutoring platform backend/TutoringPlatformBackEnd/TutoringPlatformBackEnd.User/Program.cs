@@ -1,5 +1,6 @@
 using FluentValidation;
 using MongoDB.Driver;
+using TutoringPlatformBackEnd.Users.Actors;
 using TutoringPlatformBackEnd.Users.Models;
 using TutoringPlatformBackEnd.Users.Services;
 
@@ -14,6 +15,9 @@ builder.Services.AddScoped<IAuthService, AuthService>();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddSingleton<AuthActor>();
+builder.Services.AddSingleton<SignupRequestValidatorActor>();
 
 // Add the user authentication service
 //builder.Services.AddScoped<AuthController>();
