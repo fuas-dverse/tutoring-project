@@ -1,8 +1,11 @@
 using FluentValidation;
+using Microsoft.AspNetCore.Builder;
 using MongoDB.Driver;
 using TutoringPlatformBackEnd.Users.Actors;
 using TutoringPlatformBackEnd.Users.Models;
 using TutoringPlatformBackEnd.Users.Services;
+using Microsoft.AspNetCore.Hosting;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
