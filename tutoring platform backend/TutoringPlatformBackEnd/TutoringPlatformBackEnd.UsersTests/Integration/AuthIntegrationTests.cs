@@ -27,9 +27,7 @@ namespace TutoringPlatformBackEnd.UsersTests.Integration
         [TestInitialize]
         public void Setup()
         {
-            _server = new TestServer(new WebHostBuilder()
-                .UseStartup<Program>());
-            _client = _server.CreateClient();
+            
         }
 
         [TestCleanup]

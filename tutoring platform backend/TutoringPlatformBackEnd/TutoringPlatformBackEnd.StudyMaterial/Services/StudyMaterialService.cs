@@ -13,7 +13,7 @@ namespace TutoringPlatformBackEnd.StudyMaterials.Services
 
         public StudyMaterialService(IMongoClient mongoClient)
         {
-            var database = mongoClient.GetDatabase("StudyMaterials");
+            var database = mongoClient.GetDatabase("StudyMaterial");
             _studyMaterialCollection = database.GetCollection<StudyMaterial>("TutoringPlatform");
         }
 
@@ -41,13 +41,13 @@ namespace TutoringPlatformBackEnd.StudyMaterials.Services
         public async Task UpdateStudyMaterialAsync(string id, StudyMaterial studyMaterial)
         {
             var objectId = ObjectId.Parse(id);
-            await _studyMaterialCollection.ReplaceOneAsync(s => s.Id.ToString() == id, studyMaterial);
+            await _studyMaterialCollection.ReplaceOneAsync(s => s.Id == objectId, studyMaterial);
         }
 
         public async Task DeleteStudyMaterialAsync(string id)
         {
             var objectId = ObjectId.Parse(id);
-            await _studyMaterialCollection.DeleteOneAsync(s => s.Id.Equals(objectId));
+            await _studyMaterialCollection.DeleteOneAsync(s => s.Id == objectId);
         }
     }
 }

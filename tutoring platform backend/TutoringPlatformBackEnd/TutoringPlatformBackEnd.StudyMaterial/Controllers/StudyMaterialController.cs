@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using TutoringPlatformBackEnd.StudyMaterials.Services;
 using TutoringPlatformBackEnd.StudyMaterials.Model;
+using TutoringPlatformBackEnd.StudyMaterials.Actor;
 
 namespace TutoringPlatformBackEnd.StudyMaterials.Controllers
 {
@@ -12,7 +13,7 @@ namespace TutoringPlatformBackEnd.StudyMaterials.Controllers
 
         public StudyMaterialController(IStudyMaterialService studyMaterialService)
         {
-            _studyMaterialService = studyMaterialService;
+            _studyMaterialService = studyMaterialService ?? throw new ArgumentNullException(nameof(studyMaterialService));
         }
 
         [HttpGet]
@@ -55,15 +56,29 @@ namespace TutoringPlatformBackEnd.StudyMaterials.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateStudyMaterial(string id, StudyMaterial studyMaterial)
         {
-            await _studyMaterialService.UpdateStudyMaterialAsync(id, studyMaterial);
-            return NoContent();
+            try
+            {
+                await _studyMaterialService.UpdateStudyMaterialAsync(id, studyMaterial);
+                return NoContent();
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"An error occurred while updating study material: {ex.Message}");
+            }
         }
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteStudyMaterial(string id)
         {
-            await _studyMaterialService.DeleteStudyMaterialAsync(id);
-            return NoContent();
+            try
+            {
+                await _studyMaterialService.DeleteStudyMaterialAsync(id);
+                return NoContent();
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"An error occurred while deleting study material: {ex.Message}");
+            }
         }
     }
 }
