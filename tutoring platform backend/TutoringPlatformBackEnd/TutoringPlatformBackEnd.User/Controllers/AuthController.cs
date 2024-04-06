@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using TutoringPlatformBackEnd.Users.Models;
-using TutoringPlatformBackEnd.Users.Services;
+using TutoringPlatformBackEnd.User.Models;
+using TutoringPlatformBackEnd.User.Services;
 
-namespace TutoringPlatformBackEnd.Users.Controllers
+namespace TutoringPlatformBackEnd.User.Controllers
 {
     [ApiController]
     [Route("auth")]
@@ -26,7 +26,7 @@ namespace TutoringPlatformBackEnd.Users.Controllers
                     return Conflict("User already exists");
                 }
 
-                var user = new User
+                var user = new UserModel
                 {
                     Email = request.Email,
                     Password = HashPassword(request.Password),

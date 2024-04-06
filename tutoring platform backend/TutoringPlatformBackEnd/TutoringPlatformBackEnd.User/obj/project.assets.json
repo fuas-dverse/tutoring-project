@@ -1614,9 +1614,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Tutoring project\\tutoring platform backend\\TutoringPlatformBackEnd\\TutoringPlatformBackEnd.User\\TutoringPlatformBackEnd.Users.csproj",
-      "projectName": "TutoringPlatformBackEnd.Users",
-      "projectPath": "C:\\Tutoring project\\tutoring platform backend\\TutoringPlatformBackEnd\\TutoringPlatformBackEnd.User\\TutoringPlatformBackEnd.Users.csproj",
+      "projectUniqueName": "C:\\Tutoring project\\tutoring platform backend\\TutoringPlatformBackEnd\\TutoringPlatformBackEnd.User\\TutoringPlatformBackEnd.User.csproj",
+      "projectName": "TutoringPlatformBackEnd.User",
+      "projectPath": "C:\\Tutoring project\\tutoring platform backend\\TutoringPlatformBackEnd\\TutoringPlatformBackEnd.User\\TutoringPlatformBackEnd.User.csproj",
       "packagesPath": "C:\\Users\\toder\\.nuget\\packages\\",
       "outputPath": "C:\\Tutoring project\\tutoring platform backend\\TutoringPlatformBackEnd\\TutoringPlatformBackEnd.User\\obj\\",
       "projectStyle": "PackageReference",

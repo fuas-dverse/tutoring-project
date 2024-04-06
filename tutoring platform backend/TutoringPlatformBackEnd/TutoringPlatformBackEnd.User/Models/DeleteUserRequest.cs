@@ -1,4 +1,4 @@
-﻿namespace TutoringPlatformBackEnd.Users.Models
+﻿namespace TutoringPlatformBackEnd.User.Models
 {
     public class DeleteUserRequest
     {

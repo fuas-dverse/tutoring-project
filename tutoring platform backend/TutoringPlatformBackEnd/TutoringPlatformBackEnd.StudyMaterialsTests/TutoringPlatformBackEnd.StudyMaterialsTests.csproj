@@ -18,7 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\TutoringPlatformBackEnd.StudyMaterial\TutoringPlatformBackEnd.StudyMaterials.csproj" />
+    <ProjectReference Include="..\TutoringPlatformBackEnd.StudyMaterial\TutoringPlatformBackEnd.StudyMaterial.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace TutoringPlatformBackEnd.Users.Models
+namespace TutoringPlatformBackEnd.User.Models
 {
     public class SignupRequest
     {

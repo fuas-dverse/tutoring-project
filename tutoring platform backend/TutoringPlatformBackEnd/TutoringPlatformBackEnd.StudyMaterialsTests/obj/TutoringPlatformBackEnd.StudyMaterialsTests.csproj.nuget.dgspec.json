@@ -33,8 +33,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Tutoring project\\tutoring platform backend\\TutoringPlatformBackEnd\\TutoringPlatformBackEnd.StudyMaterial\\TutoringPlatformBackEnd.StudyMaterials.csproj": {
-                "projectPath": "C:\\Tutoring project\\tutoring platform backend\\TutoringPlatformBackEnd\\TutoringPlatformBackEnd.StudyMaterial\\TutoringPlatformBackEnd.StudyMaterials.csproj"
+              "C:\\Tutoring project\\tutoring platform backend\\TutoringPlatformBackEnd\\TutoringPlatformBackEnd.StudyMaterial\\TutoringPlatformBackEnd.StudyMaterial.csproj": {
+                "projectPath": "C:\\Tutoring project\\tutoring platform backend\\TutoringPlatformBackEnd\\TutoringPlatformBackEnd.StudyMaterial\\TutoringPlatformBackEnd.StudyMaterial.csproj"
               }
             }
           }
@@ -90,12 +90,12 @@
         }
       }
     },
-    "C:\\Tutoring project\\tutoring platform backend\\TutoringPlatformBackEnd\\TutoringPlatformBackEnd.StudyMaterial\\TutoringPlatformBackEnd.StudyMaterials.csproj": {
+    "C:\\Tutoring project\\tutoring platform backend\\TutoringPlatformBackEnd\\TutoringPlatformBackEnd.StudyMaterial\\TutoringPlatformBackEnd.StudyMaterial.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Tutoring project\\tutoring platform backend\\TutoringPlatformBackEnd\\TutoringPlatformBackEnd.StudyMaterial\\TutoringPlatformBackEnd.StudyMaterials.csproj",
-        "projectName": "TutoringPlatformBackEnd.StudyMaterials",
-        "projectPath": "C:\\Tutoring project\\tutoring platform backend\\TutoringPlatformBackEnd\\TutoringPlatformBackEnd.StudyMaterial\\TutoringPlatformBackEnd.StudyMaterials.csproj",
+        "projectUniqueName": "C:\\Tutoring project\\tutoring platform backend\\TutoringPlatformBackEnd\\TutoringPlatformBackEnd.StudyMaterial\\TutoringPlatformBackEnd.StudyMaterial.csproj",
+        "projectName": "TutoringPlatformBackEnd.StudyMaterial",
+        "projectPath": "C:\\Tutoring project\\tutoring platform backend\\TutoringPlatformBackEnd\\TutoringPlatformBackEnd.StudyMaterial\\TutoringPlatformBackEnd.StudyMaterial.csproj",
         "packagesPath": "C:\\Users\\toder\\.nuget\\packages\\",
         "outputPath": "C:\\Tutoring project\\tutoring platform backend\\TutoringPlatformBackEnd\\TutoringPlatformBackEnd.StudyMaterial\\obj\\",
         "projectStyle": "PackageReference",

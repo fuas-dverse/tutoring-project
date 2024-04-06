@@ -1,17 +1,17 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using TutoringPlatformBackEnd.StudyMaterials.Controllers;
+using TutoringPlatformBackEnd.StudyMaterial.Controllers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using TutoringPlatformBackEnd.StudyMaterials.Model;
-using TutoringPlatformBackEnd.StudyMaterials.Services;
+using TutoringPlatformBackEnd.StudyMaterial.Model;
+using TutoringPlatformBackEnd.StudyMaterial.Services;
 using Moq;
 using MongoDB.Bson;
 
-namespace TutoringPlatformBackEnd.StudyMaterials.Controllers.Tests
+namespace TutoringPlatformBackEnd.StudyMaterial.Controllers.Tests
 {
     [TestClass()]
     public class StudyMaterialControllerTests
@@ -22,7 +22,7 @@ namespace TutoringPlatformBackEnd.StudyMaterials.Controllers.Tests
             // Arrange
             var mockService = new Mock<IStudyMaterialService>();
             mockService.Setup(service => service.GetAllStudyMaterialsAsync())
-                       .ReturnsAsync(new List<StudyMaterial>());
+                       .ReturnsAsync(new List<StudyMaterialModel>());
 
             var controller = new StudyMaterialController(mockService.Object);
 
@@ -32,7 +32,7 @@ namespace TutoringPlatformBackEnd.StudyMaterials.Controllers.Tests
             // Assert
             Assert.IsInstanceOfType(result.Result, typeof(OkObjectResult));
             Assert.IsNotNull((result.Result as OkObjectResult)?.Value);
-            CollectionAssert.AreEqual(new List<StudyMaterial>(), (result.Result as OkObjectResult)?.Value as List<StudyMaterial>);
+            CollectionAssert.AreEqual(new List<StudyMaterialModel>(), (result.Result as OkObjectResult)?.Value as List<StudyMaterialModel>);
         }
 
         [TestMethod]
@@ -40,7 +40,7 @@ namespace TutoringPlatformBackEnd.StudyMaterials.Controllers.Tests
         {
             // Arrange
             var mockService = new Mock<IStudyMaterialService>();
-            var expectedStudyMaterial = new StudyMaterial { Id = ObjectId.GenerateNewId(), Title = "test Material" };
+            var expectedStudyMaterial = new StudyMaterialModel { Id = ObjectId.GenerateNewId(), Title = "test Material" };
 
             mockService.Setup(service => service.GetStudyMaterialByIdAsync("1"))
                        .ReturnsAsync(expectedStudyMaterial);
@@ -61,7 +61,7 @@ namespace TutoringPlatformBackEnd.StudyMaterials.Controllers.Tests
             // Arrange
             var mockService = new Mock<IStudyMaterialService>();
             mockService.Setup(service => service.GetStudyMaterialByIdAsync("100"))
-                       .ReturnsAsync((StudyMaterial)null);
+                       .ReturnsAsync((StudyMaterialModel)null);
 
             var controller = new StudyMaterialController(mockService.Object);
 
@@ -78,7 +78,7 @@ namespace TutoringPlatformBackEnd.StudyMaterials.Controllers.Tests
             // Arrange
             var mockService = new Mock<IStudyMaterialService>();
             mockService.Setup(service => service.GetStudyMaterialsByTutorIdAsync("tutorId"))
-                       .ReturnsAsync(new List<StudyMaterial>());
+                       .ReturnsAsync(new List<StudyMaterialModel>());
 
             var controller = new StudyMaterialController(mockService.Object);
 
@@ -88,7 +88,7 @@ namespace TutoringPlatformBackEnd.StudyMaterials.Controllers.Tests
             // Assert
             Assert.IsInstanceOfType(result.Result, typeof(OkObjectResult));
             Assert.IsNotNull((result.Result as OkObjectResult)?.Value);
-            CollectionAssert.AreEqual(new List<StudyMaterial>(), (result.Result as OkObjectResult)?.Value as List<StudyMaterial>);
+            CollectionAssert.AreEqual(new List<StudyMaterialModel>(), (result.Result as OkObjectResult)?.Value as List<StudyMaterialModel>);
         }
 
         [TestMethod]
@@ -96,8 +96,8 @@ namespace TutoringPlatformBackEnd.StudyMaterials.Controllers.Tests
         {
             // Arrange
             var mockService = new Mock<IStudyMaterialService>();
-            var inputStudyMaterial = new StudyMaterial { Title = "Sample Material" };
-            var expectedStudyMaterial = new StudyMaterial { Id = ObjectId.GenerateNewId(), Title = "test Material" };
+            var inputStudyMaterial = new StudyMaterialModel { Title = "Sample Material" };
+            var expectedStudyMaterial = new StudyMaterialModel { Id = ObjectId.GenerateNewId(), Title = "test Material" };
 
             mockService.Setup(service => service.CreateStudyMaterialAsync(inputStudyMaterial))
                        .ReturnsAsync(expectedStudyMaterial);
@@ -118,7 +118,7 @@ namespace TutoringPlatformBackEnd.StudyMaterials.Controllers.Tests
             // Arrange
             var mockService = new Mock<IStudyMaterialService>();
             var inputId = "1";
-            var inputStudyMaterial = new StudyMaterial { Title = "Updated Material" };
+            var inputStudyMaterial = new StudyMaterialModel { Title = "Updated Material" };
 
             var controller = new StudyMaterialController(mockService.Object);
 

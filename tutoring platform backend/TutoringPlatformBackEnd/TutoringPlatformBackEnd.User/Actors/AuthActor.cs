@@ -1,8 +1,8 @@
 ﻿using Proto;
-using TutoringPlatformBackEnd.Users.Models;
-using TutoringPlatformBackEnd.Users.Services;
+using TutoringPlatformBackEnd.User.Models;
+using TutoringPlatformBackEnd.User.Services;
 
-namespace TutoringPlatformBackEnd.Users.Actors
+namespace TutoringPlatformBackEnd.User.Actors
 
 {
     public class AuthActor : IActor

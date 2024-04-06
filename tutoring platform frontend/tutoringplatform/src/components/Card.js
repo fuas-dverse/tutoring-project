@@ -28,26 +28,18 @@ function Card() {
             {event.map((item) => {
                     return(
                         <div className="card2">
-                            <img src={require('../assets/background_2.jpg')}alt={'image for study materials'} className="card__img" />
+                            <img src={require('../assets/background_2.jpg')} alt={'image for study materials'} className="card__img" />
                             <div className="card__body">
                                 <h2 className="card__title">{item.title}</h2>
                                 <p className="card__description">{item.educationLevel}</p>
                                 <h3 className="card__price">Topic</h3>
-                                <button onClick={() => {
-                                    LoadEdit(item.name)
-                                }} className="card__btn">View</button>
                             </div>
                         </div>
                     )
                 }
             )
             }
-
         </div>
-        // </div>
-
     )
-
 }
-
 export default Card;

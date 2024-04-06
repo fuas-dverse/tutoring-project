@@ -7,13 +7,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TutoringPlatformBackEnd", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TutoringPlatformBackEndGateway", "TutoringPlatformBackEndGateway\TutoringPlatformBackEndGateway.csproj", "{B821C615-DB95-49C6-8AC0-5C57AEE64B6F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TutoringPlatformBackEnd.Users", "TutoringPlatformBackEnd.User\TutoringPlatformBackEnd.Users.csproj", "{83E89914-D002-49E8-BDE2-97995F1D1CCD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TutoringPlatformBackEnd.User", "TutoringPlatformBackEnd.User\TutoringPlatformBackEnd.User.csproj", "{83E89914-D002-49E8-BDE2-97995F1D1CCD}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TutoringPlatformBackEnd.StudyMaterials", "TutoringPlatformBackEnd.StudyMaterial\TutoringPlatformBackEnd.StudyMaterials.csproj", "{6D33997A-6724-47C0-AE24-99AA715EA74F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TutoringPlatformBackEnd.StudyMaterial", "TutoringPlatformBackEnd.StudyMaterial\TutoringPlatformBackEnd.StudyMaterial.csproj", "{6D33997A-6724-47C0-AE24-99AA715EA74F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TutoringPlatformBackEnd.UsersTests", "TutoringPlatformBackEnd.UsersTests\TutoringPlatformBackEnd.UsersTests.csproj", "{74C54BC8-178D-4596-A2AA-1950E5F1A56E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TutoringPlatformBackEnd.UserTests", "TutoringPlatformBackEnd.UsersTests\TutoringPlatformBackEnd.UserTests.csproj", "{74C54BC8-178D-4596-A2AA-1950E5F1A56E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TutoringPlatformBackEnd.StudyMaterialsTests", "TutoringPlatformBackEnd.StudyMaterialsTests\TutoringPlatformBackEnd.StudyMaterialsTests.csproj", "{FB8442D5-2223-44D5-A855-C86C9075F487}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TutoringPlatformBackEnd.StudyMaterialsTests", "TutoringPlatformBackEnd.StudyMaterialsTests\TutoringPlatformBackEnd.StudyMaterialsTests.csproj", "{FB8442D5-2223-44D5-A855-C86C9075F487}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

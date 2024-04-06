@@ -4,7 +4,6 @@ import "../components/Card.css"
 
 function StudyMaterialsPage() {
     return(
-
         <div className="wrapperCardsBox">
             <Card />
         </div>

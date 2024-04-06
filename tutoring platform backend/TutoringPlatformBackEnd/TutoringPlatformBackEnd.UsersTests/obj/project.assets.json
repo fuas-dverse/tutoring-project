@@ -1289,7 +1289,7 @@
           "lib/net6.0/ZstdSharp.dll": {}
         }
       },
-      "TutoringPlatformBackEnd.Users/1.0.0": {
+      "TutoringPlatformBackEnd.User/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
@@ -1301,10 +1301,10 @@
           "Swashbuckle.AspNetCore": "6.2.3"
         },
         "compile": {
-          "bin/placeholder/TutoringPlatformBackEnd.Users.dll": {}
+          "bin/placeholder/TutoringPlatformBackEnd.User.dll": {}
         },
         "runtime": {
-          "bin/placeholder/TutoringPlatformBackEnd.Users.dll": {}
+          "bin/placeholder/TutoringPlatformBackEnd.User.dll": {}
         },
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
@@ -4135,10 +4135,10 @@
         "zstdsharp.port.nuspec"
       ]
     },
-    "TutoringPlatformBackEnd.Users/1.0.0": {
+    "TutoringPlatformBackEnd.User/1.0.0": {
       "type": "project",
-      "path": "../TutoringPlatformBackEnd.User/TutoringPlatformBackEnd.Users.csproj",
-      "msbuildProject": "../TutoringPlatformBackEnd.User/TutoringPlatformBackEnd.Users.csproj"
+      "path": "../TutoringPlatformBackEnd.User/TutoringPlatformBackEnd.User.csproj",
+      "msbuildProject": "../TutoringPlatformBackEnd.User/TutoringPlatformBackEnd.User.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -4149,7 +4149,7 @@
       "Microsoft.NET.Test.Sdk >= 17.5.0",
       "Moq >= 4.20.70",
       "NUnit >= 4.0.0",
-      "TutoringPlatformBackEnd.Users >= 1.0.0",
+      "TutoringPlatformBackEnd.User >= 1.0.0",
       "coverlet.collector >= 3.2.0"
     ]
   },
@@ -4160,9 +4160,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Tutoring project\\tutoring platform backend\\TutoringPlatformBackEnd\\TutoringPlatformBackEnd.UsersTests\\TutoringPlatformBackEnd.UsersTests.csproj",
-      "projectName": "TutoringPlatformBackEnd.UsersTests",
-      "projectPath": "C:\\Tutoring project\\tutoring platform backend\\TutoringPlatformBackEnd\\TutoringPlatformBackEnd.UsersTests\\TutoringPlatformBackEnd.UsersTests.csproj",
+      "projectUniqueName": "C:\\Tutoring project\\tutoring platform backend\\TutoringPlatformBackEnd\\TutoringPlatformBackEnd.UsersTests\\TutoringPlatformBackEnd.UserTests.csproj",
+      "projectName": "TutoringPlatformBackEnd.UserTests",
+      "projectPath": "C:\\Tutoring project\\tutoring platform backend\\TutoringPlatformBackEnd\\TutoringPlatformBackEnd.UsersTests\\TutoringPlatformBackEnd.UserTests.csproj",
       "packagesPath": "C:\\Users\\toder\\.nuget\\packages\\",
       "outputPath": "C:\\Tutoring project\\tutoring platform backend\\TutoringPlatformBackEnd\\TutoringPlatformBackEnd.UsersTests\\obj\\",
       "projectStyle": "PackageReference",
@@ -4186,8 +4186,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Tutoring project\\tutoring platform backend\\TutoringPlatformBackEnd\\TutoringPlatformBackEnd.User\\TutoringPlatformBackEnd.Users.csproj": {
-              "projectPath": "C:\\Tutoring project\\tutoring platform backend\\TutoringPlatformBackEnd\\TutoringPlatformBackEnd.User\\TutoringPlatformBackEnd.Users.csproj"
+            "C:\\Tutoring project\\tutoring platform backend\\TutoringPlatformBackEnd\\TutoringPlatformBackEnd.User\\TutoringPlatformBackEnd.User.csproj": {
+              "projectPath": "C:\\Tutoring project\\tutoring platform backend\\TutoringPlatformBackEnd\\TutoringPlatformBackEnd.User\\TutoringPlatformBackEnd.User.csproj"
             }
           }
         }

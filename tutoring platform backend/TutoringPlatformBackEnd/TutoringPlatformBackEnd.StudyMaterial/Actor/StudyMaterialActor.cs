@@ -1,7 +1,7 @@
-﻿using TutoringPlatformBackEnd.StudyMaterials.Model;
-using TutoringPlatformBackEnd.StudyMaterials.Services;
+﻿using TutoringPlatformBackEnd.StudyMaterial.Model;
+using TutoringPlatformBackEnd.StudyMaterial.Services;
 
-namespace TutoringPlatformBackEnd.StudyMaterials.Actor
+namespace TutoringPlatformBackEnd.StudyMaterial.Actor
 {
     public class StudyMaterialActor : IStudyMaterialActor
     {
@@ -12,7 +12,7 @@ namespace TutoringPlatformBackEnd.StudyMaterials.Actor
             _serviceProvider = serviceProvider;
         }
 
-        public async Task<List<StudyMaterial>> GetAllStudyMaterialsAsync()
+        public async Task<List<StudyMaterialModel>> GetAllStudyMaterialsAsync()
         {
             using (var scope = _serviceProvider.CreateScope())
             {
@@ -21,7 +21,7 @@ namespace TutoringPlatformBackEnd.StudyMaterials.Actor
             }
         }
 
-        public async Task<StudyMaterial> GetStudyMaterialByIdAsync(string id)
+        public async Task<StudyMaterialModel> GetStudyMaterialByIdAsync(string id)
         {
             using (var scope = _serviceProvider.CreateScope())
             {
@@ -30,7 +30,7 @@ namespace TutoringPlatformBackEnd.StudyMaterials.Actor
             }
         }
 
-        public async Task<List<StudyMaterial>> GetStudyMaterialsByTutorIdAsync(string tutorId)
+        public async Task<List<StudyMaterialModel>> GetStudyMaterialsByTutorIdAsync(string tutorId)
         {
             using (var scope = _serviceProvider.CreateScope())
             {
@@ -39,7 +39,7 @@ namespace TutoringPlatformBackEnd.StudyMaterials.Actor
             }
         }
 
-        public async Task<StudyMaterial> CreateStudyMaterialAsync(StudyMaterial studyMaterial)
+        public async Task<StudyMaterialModel> CreateStudyMaterialAsync(StudyMaterialModel studyMaterial)
         {
             using (var scope = _serviceProvider.CreateScope())
             {
@@ -48,7 +48,7 @@ namespace TutoringPlatformBackEnd.StudyMaterials.Actor
             }
         }
 
-        public async Task UpdateStudyMaterialAsync(string id, StudyMaterial studyMaterial)
+        public async Task UpdateStudyMaterialAsync(string id, StudyMaterialModel studyMaterial)
         {
             using (var scope = _serviceProvider.CreateScope())
             {

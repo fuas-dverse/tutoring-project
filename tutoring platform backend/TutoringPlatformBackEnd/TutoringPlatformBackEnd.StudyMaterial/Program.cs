@@ -1,6 +1,6 @@
 using MongoDB.Driver;
-using TutoringPlatformBackEnd.StudyMaterials.Actor;
-using TutoringPlatformBackEnd.StudyMaterials.Services;
+using TutoringPlatformBackEnd.StudyMaterial.Actor;
+using TutoringPlatformBackEnd.StudyMaterial.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 

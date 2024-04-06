@@ -24,3 +24,4 @@ C:\Tutoring project\tutoring platform backend\TutoringPlatformBackEnd\TutoringPl
 C:\Tutoring project\tutoring platform backend\TutoringPlatformBackEnd\TutoringPlatformBackEndGateway\obj\Debug\net6.0\TutoringPlatformBackEndGateway.pdb
 C:\Tutoring project\tutoring platform backend\TutoringPlatformBackEnd\TutoringPlatformBackEndGateway\obj\Debug\net6.0\TutoringPlatformBackEndGateway.genruntimeconfig.cache
 C:\Tutoring project\tutoring platform backend\TutoringPlatformBackEnd\TutoringPlatformBackEndGateway\obj\Debug\net6.0\ref\TutoringPlatformBackEndGateway.dll
+C:\Tutoring project\tutoring platform backend\TutoringPlatformBackEnd\TutoringPlatformBackEndGateway\bin\Debug\net6.0\ocelot.json

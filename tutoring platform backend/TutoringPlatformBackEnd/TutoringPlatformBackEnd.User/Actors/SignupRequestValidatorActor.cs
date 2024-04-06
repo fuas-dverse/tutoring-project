@@ -1,11 +1,11 @@
 ﻿using FluentValidation;
 using Proto;
-using TutoringPlatformBackEnd.Users.Models;
+using TutoringPlatformBackEnd.User.Models;
 using System;
 using System.Threading.Tasks;
 
 
-namespace TutoringPlatformBackEnd.Users.Actors
+namespace TutoringPlatformBackEnd.User.Actors
 {
     public class SignupRequestValidatorActor : IActor
     {

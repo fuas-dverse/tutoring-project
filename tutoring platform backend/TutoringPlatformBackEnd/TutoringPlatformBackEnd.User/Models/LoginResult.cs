@@ -1,9 +1,9 @@
-﻿namespace TutoringPlatformBackEnd.Users.Models
+﻿namespace TutoringPlatformBackEnd.User.Models
 {
     public class LoginResult
     {
         public bool Success { get; set; }
         public string ErrorMessage { get; set; }
-        public User User { get; set; } // User object for successful login
+        public UserModel User { get; set; } // User object for successful login
     }
 }

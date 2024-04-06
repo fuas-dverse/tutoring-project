@@ -1,15 +1,15 @@
-﻿using TutoringPlatformBackEnd.StudyMaterials.Model;
+﻿using TutoringPlatformBackEnd.StudyMaterial.Model;
 
-namespace TutoringPlatformBackEnd.StudyMaterials.Actor
+namespace TutoringPlatformBackEnd.StudyMaterial.Actor
 {
     public interface IStudyMaterialActor
     {
 
-        Task<List<StudyMaterial>> GetAllStudyMaterialsAsync();
-        Task<StudyMaterial> GetStudyMaterialByIdAsync(string id);
-        Task<List<StudyMaterial>> GetStudyMaterialsByTutorIdAsync(string tutorId);
-        Task<StudyMaterial> CreateStudyMaterialAsync(StudyMaterial studyMaterial);
-        Task UpdateStudyMaterialAsync(string id, StudyMaterial studyMaterial);
+        Task<List<StudyMaterialModel>> GetAllStudyMaterialsAsync();
+        Task<StudyMaterialModel> GetStudyMaterialByIdAsync(string id);
+        Task<List<StudyMaterialModel>> GetStudyMaterialsByTutorIdAsync(string tutorId);
+        Task<StudyMaterialModel> CreateStudyMaterialAsync(StudyMaterialModel studyMaterial);
+        Task UpdateStudyMaterialAsync(string id, StudyMaterialModel studyMaterial);
         Task DeleteStudyMaterialAsync(string id);
     }
 }

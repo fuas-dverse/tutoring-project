@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
 
-namespace TutoringPlatformBackEnd.Users.Models
+namespace TutoringPlatformBackEnd.User.Models
 {
     public class SignupRequestValidator : AbstractValidator<SignupRequest>
     {

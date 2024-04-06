@@ -1,0 +1,40 @@
+{
+  "Routes": [
+    //User API
+    {
+      "DownstreamPathTemplate": "/auth/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "user-service",
+          "Port": 7269
+        }
+      ],
+      "UpstreamPathTemplate": "/auth/{everything}",
+      "UpstreamHttpMethod": [
+        "GET",
+        "POST",
+        "UPDATE",
+        "DELETE"
+      ]
+    },
+    //StudyMaterials API
+    {
+      "DownstreamPathTemplate": "/studymaterials",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "studymaterial-service",
+          "Port": 7071
+        }
+      ],
+      "UpstreamPathTemplate": "/studymaterials/{everything}",
+      "UpstreamHttpMethod": [
+        "GET",
+        "POST",
+        "UPDATE",
+        "DELETE"
+      ]
+    }
+  ]
+}

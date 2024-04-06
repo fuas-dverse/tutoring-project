@@ -1219,7 +1219,7 @@
           "lib/net6.0/ZstdSharp.dll": {}
         }
       },
-      "TutoringPlatformBackEnd.StudyMaterials/1.0.0": {
+      "TutoringPlatformBackEnd.StudyMaterial/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
@@ -1229,10 +1229,10 @@
           "Swashbuckle.AspNetCore": "6.2.3"
         },
         "compile": {
-          "bin/placeholder/TutoringPlatformBackEnd.StudyMaterials.dll": {}
+          "bin/placeholder/TutoringPlatformBackEnd.StudyMaterial.dll": {}
         },
         "runtime": {
-          "bin/placeholder/TutoringPlatformBackEnd.StudyMaterials.dll": {}
+          "bin/placeholder/TutoringPlatformBackEnd.StudyMaterial.dll": {}
         },
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
@@ -3967,10 +3967,10 @@
         "zstdsharp.port.nuspec"
       ]
     },
-    "TutoringPlatformBackEnd.StudyMaterials/1.0.0": {
+    "TutoringPlatformBackEnd.StudyMaterial/1.0.0": {
       "type": "project",
-      "path": "../TutoringPlatformBackEnd.StudyMaterial/TutoringPlatformBackEnd.StudyMaterials.csproj",
-      "msbuildProject": "../TutoringPlatformBackEnd.StudyMaterial/TutoringPlatformBackEnd.StudyMaterials.csproj"
+      "path": "../TutoringPlatformBackEnd.StudyMaterial/TutoringPlatformBackEnd.StudyMaterial.csproj",
+      "msbuildProject": "../TutoringPlatformBackEnd.StudyMaterial/TutoringPlatformBackEnd.StudyMaterial.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -3979,7 +3979,7 @@
       "MSTest.TestFramework >= 2.2.10",
       "Microsoft.NET.Test.Sdk >= 17.5.0",
       "Moq >= 4.20.70",
-      "TutoringPlatformBackEnd.StudyMaterials >= 1.0.0",
+      "TutoringPlatformBackEnd.StudyMaterial >= 1.0.0",
       "coverlet.collector >= 3.2.0"
     ]
   },
@@ -4016,8 +4016,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Tutoring project\\tutoring platform backend\\TutoringPlatformBackEnd\\TutoringPlatformBackEnd.StudyMaterial\\TutoringPlatformBackEnd.StudyMaterials.csproj": {
-              "projectPath": "C:\\Tutoring project\\tutoring platform backend\\TutoringPlatformBackEnd\\TutoringPlatformBackEnd.StudyMaterial\\TutoringPlatformBackEnd.StudyMaterials.csproj"
+            "C:\\Tutoring project\\tutoring platform backend\\TutoringPlatformBackEnd\\TutoringPlatformBackEnd.StudyMaterial\\TutoringPlatformBackEnd.StudyMaterial.csproj": {
+              "projectPath": "C:\\Tutoring project\\tutoring platform backend\\TutoringPlatformBackEnd\\TutoringPlatformBackEnd.StudyMaterial\\TutoringPlatformBackEnd.StudyMaterial.csproj"
             }
           }
         }

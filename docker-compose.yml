@@ -1,0 +1,41 @@
+version: "3"
+services:
+  frontend:
+    container_name: frontend
+    image: iuliaaaaa/tutoringplatform:frontend
+    build:
+      context: ./tutoring platform frontend/tutoringplatform
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
+    networks:
+      - backend
+  api-gateway:
+    container_name: api-gateway
+    image: iuliaaaa/tutoringplatform:gateway
+    build:
+      context: ./tutoring platform backend/TutoringPlatformBackEnd
+      dockerfile: ./TutoringPlatformBackEndGateway/Dockerfile
+    ports:
+      - 7041:7041
+    networks:
+      - backend
+  user-service:
+    container_name: user-service
+    image: iuliaaaaa/tutoringplatform:user
+    build:
+      context: ./tutoring platform backend/TutoringPlatformBackEnd
+      dockerfile: ./TutoringPlatformBackEnd.User/Dockerfile
+    ports:
+      - 7269:7269
+    networks:
+      - backend
+  mongo:
+    container_name: mongo
+    image: mongodb/mongodb-community-server:latest
+    ports:
+      - 27017:27017
+    networks:
+      - backend
+networks:
+  backend:
