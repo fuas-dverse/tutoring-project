@@ -1,7 +1,7 @@
 import axios from 'axios'
 
-const USER_BASE_REST_API_URL = 'http://localhost:7259/auth/users';
-const USER_BASE_REST_API_URL_POST = 'http://localhost:7259/auth/register'
+const USER_BASE_REST_API_URL = 'http://localhost:27017/auth';
+const USER_BASE_REST_API_URL_POST = 'http://localhost:27017/auth/register'
 
 
 class UserService{

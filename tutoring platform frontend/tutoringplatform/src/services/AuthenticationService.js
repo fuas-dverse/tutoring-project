@@ -1,8 +1,9 @@
+/*
 import api from './http-common';
 import jwtDecode from "jwt-decode";
 
 const login = (user) => {
-    return api.post(`/auth/login`, user)
+    return api.post(`/login`, user)
         .then((response) => {
             if(response.data.accessToken){
                 localStorage.setItem("user", JSON.stringify(response.data));
@@ -16,7 +17,7 @@ const logout = () => {
 }
 
 const register = (data) =>{
-    return api.post(`/auth/register`, data);
+    return api.post(`/register`, data);
 }
 
 const getCurrentUser = () => {
@@ -26,8 +27,7 @@ const getCurrentUser = () => {
 const getId = () => {
     const token = localStorage.getItem("user");
     if(token) {
-        var user;
-        user = jwtDecode(token);
+        var user = jwtDecode(token);
         console.log(user);
     }else {
         user = {
@@ -46,3 +46,4 @@ const AuthenticationService = {
 };
 
 export default AuthenticationService;
+*/

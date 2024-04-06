@@ -1,29 +1,30 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using TutoringPlatformBackEnd.StudyMaterials.Services;
-using TutoringPlatformBackEnd.StudyMaterials.Model;
+using TutoringPlatformBackEnd.StudyMaterial.Services;
+using TutoringPlatformBackEnd.StudyMaterial.Model;
+using TutoringPlatformBackEnd.StudyMaterial.Actor;
 
-namespace TutoringPlatformBackEnd.StudyMaterials.Controllers
+namespace TutoringPlatformBackEnd.StudyMaterial.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("studymaterials")]
     public class StudyMaterialController : ControllerBase
     {
         private readonly IStudyMaterialService _studyMaterialService;
 
         public StudyMaterialController(IStudyMaterialService studyMaterialService)
         {
-            _studyMaterialService = studyMaterialService;
+            _studyMaterialService = studyMaterialService ?? throw new ArgumentNullException(nameof(studyMaterialService));
         }
 
         [HttpGet]
-        public async Task<ActionResult<List<StudyMaterial>>> GetAllStudyMaterials()
+        public async Task<ActionResult<List<StudyMaterialModel>>> GetAllStudyMaterials()
         {
             var studyMaterials = await _studyMaterialService.GetAllStudyMaterialsAsync();
             return Ok(studyMaterials);
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<StudyMaterial>> GetStudyMaterialById(string id)
+        public async Task<ActionResult<StudyMaterialModel>> GetStudyMaterialById(string id)
         {
             var studyMaterial = await _studyMaterialService.GetStudyMaterialByIdAsync(id);
             if (studyMaterial == null)
@@ -34,14 +35,14 @@ namespace TutoringPlatformBackEnd.StudyMaterials.Controllers
         }
 
         [HttpGet("tutor/{tutorId}")]
-        public async Task<ActionResult<List<StudyMaterial>>> GetStudyMaterialsByTutorId(string tutorId)
+        public async Task<ActionResult<List<StudyMaterialModel>>> GetStudyMaterialsByTutorId(string tutorId)
         {
             var studyMaterials = await _studyMaterialService.GetStudyMaterialsByTutorIdAsync(tutorId);
             return Ok(studyMaterials);
         }
 
         [HttpPost]
-        public async Task<ActionResult<StudyMaterial>> CreateStudyMaterial([FromBody] StudyMaterial studyMaterial)
+        public async Task<ActionResult<StudyMaterialModel>> CreateStudyMaterial([FromBody] StudyMaterialModel studyMaterial)
         {
             if (studyMaterial == null)
             {
@@ -53,17 +54,31 @@ namespace TutoringPlatformBackEnd.StudyMaterials.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateStudyMaterial(string id, StudyMaterial studyMaterial)
+        public async Task<IActionResult> UpdateStudyMaterial(string id, StudyMaterialModel studyMaterial)
         {
-            await _studyMaterialService.UpdateStudyMaterialAsync(id, studyMaterial);
-            return NoContent();
+            try
+            {
+                await _studyMaterialService.UpdateStudyMaterialAsync(id, studyMaterial);
+                return NoContent();
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"An error occurred while updating study material: {ex.Message}");
+            }
         }
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteStudyMaterial(string id)
         {
-            await _studyMaterialService.DeleteStudyMaterialAsync(id);
-            return NoContent();
+            try
+            {
+                await _studyMaterialService.DeleteStudyMaterialAsync(id);
+                return NoContent();
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"An error occurred while deleting study material: {ex.Message}");
+            }
         }
     }
 }

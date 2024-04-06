@@ -1,13 +1,13 @@
-﻿using TutoringPlatformBackEnd.Users.Models;
+﻿using TutoringPlatformBackEnd.User.Models;
 
-namespace TutoringPlatformBackEnd.Users.Services
+namespace TutoringPlatformBackEnd.User.Services
 {
     public interface IAuthService
     {
-        Task<User> RegisterAsync(SignupRequest request);
-        Task<User> LoginAsync(LoginRequest request);
-        Task<User> GetUserByEmailAsync(string email);
-        Task UpdateUserAsync(User user);
+        Task<UserModel> RegisterAsync(SignupRequest request);
+        Task<UserModel> LoginAsync(LoginRequest request);
+        Task<UserModel> GetUserByEmailAsync(string email);
+        Task UpdateUserAsync(UserModel user);
         Task DeleteUserAsync(string email);
     }
 }
