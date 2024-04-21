@@ -1,14 +1,14 @@
 import http from "./http-common";
 
 const get = id => {
-    return http.get(`/studyMaterials/${id}`);
+    return http.get(`/studymaterials/${id}`);
 };
 
 const getStudyMaterials = tutorId => {
-    return http.get(`/studyMaterials/${tutorId}`)
+    return http.get(`/studymaterials/${tutorId}`)
 }
 const getAll = () => {
-    return http.get(`/studyMaterials`);
+    return http.get(`/studymaterials`);
 };
 
 

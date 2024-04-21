@@ -18,6 +18,7 @@ import Logout from "./Logout";
 import UploadStudyMaterialPage from "../pages/UploadStudyMaterial";
 import StudyMaterialForm from "./StudyMaterialForm";
 import StudyMaterialsPage from "../pages/StudyMaterialsPage";
+import AllObjectsPage from "../studyMaterialPages/AllObjectsPage";
 
 export const NavigationBar = () => {
     const [activeLink, setActiveLink] = useState('home');
@@ -70,7 +71,8 @@ export const NavigationBar = () => {
                 <Route path={"/signup"} element={<SignUpPage />} />
                 <Route path={"/logout"} element={<Logout />} />
                 <Route path={"/studyMaterialForm"} element={<StudyMaterialForm />} />
-                <Route path={"/studyMaterials"} element={<StudyMaterialsPage />} />
+                <Route path={"/studymaterials"} element={<StudyMaterialsPage />} />
+                <Route path={"/all"} element={<AllObjectsPage />} />
             </Routes>
         </BrowserRouter>
     )
